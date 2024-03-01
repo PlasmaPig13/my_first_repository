@@ -381,31 +381,24 @@ def f0(points):
         return (math.sin(params["m0"]*points[0][1])+points[1][0]*math.cos(params["m0"]*points[0][0]),
                 math.sin(params["m1"]*points[0][0])+points[1][1]*math.cos(params["m1"]*points[0][1]))
     elif func == 1:
-        numPoints = 2
         return (math.sin(params["m0"]*points[0][0])+points[1][0]*math.sin(params["m1"]*points[0][1]),
                 math.sin(params["m0"]*points[0][1])+points[1][1]*math.sin(params["m1"]*points[0][1]))
     elif func == 2:
-        numPoints = 2
         return (math.sin(params["m0"]*points[0][0])+points[1][0]*math.sin(params["m1"]*points[0][1])+params["m2"],
                 math.sin(params["m0"]*points[0][1])+points[1][1]*math.sin(params["m1"]*points[0][1])+params["m2"])
     elif func == 3:
-        numPoints = 2
         return (abs(abs(points[1][0])-params["m0"])/(abs(points[0][0]**2-points[0][1])+params["m1"]),
                 abs(abs(points[1][1])-params["m0"])/(abs(points[0][1]**2-points[0][0])+params["m1"]))
     elif func == 4:
-        numPoints = 2
         return (math.sin(params["m0"]*points[0][0])+points[1][0]*math.sin(params["m1"]*points[0][1])+params["m2"],
                 math.sin(params["m0"]*points[0][1])+points[1][1]*math.sin(params["m1"]*points[0][0])+params["m2"])
     elif func == 5:
-        numPoints = 3
         return (math.sin(params["m0"]*points[0][0])+points[1][0]*math.sin(params["m1"]*points[2][1])+params["m2"],
                 math.sin(params["m0"]*points[0][1])+points[1][1]*math.sin(params["m1"]*points[2][0])+params["m2"])
     elif func == 6:
-        numPoints = 3
         return (math.sin(params["m0"]*points[0][0])+points[1][0]*math.sin(params["m1"]*points[2][1])+params["m2"],
                 math.sin(params["m3"]*points[0][1])+points[1][1]*math.sin(params["m4"]*points[2][0])+params["m5"])
     elif func == 7:
-        numPoints = 1
         return (abs(points[0][0])**(params["m0"]-math.floor(params["m0"]*math.log(abs(points[0][0])))/math.log(abs(points[0][0])))-params["m1"]*points[0][1],
                 abs(points[0][1])**(params["m0"]-math.floor(params["m0"]*math.log(abs(points[0][1])))/math.log(abs(points[0][1])))-params["m2"]*points[0][0])
     elif func == 8:
@@ -420,7 +413,9 @@ def f0(points):
     elif func == 11:
         return ((params["m0"]*points[0][0] + params["m1"]*points[0][1] + params["m2"]*points[1][0] + params["m3"]*points[1][1] + params["m4"]*points[2][0] + params["m5"]*points[2][1] + params["m6"])*math.sin(params["m7"]*points[0][0] + params["m8"]*points[0][1] + params["m9"]*points[1][0] + params["m10"]*points[1][1] + params["m11"]*points[2][0] + params["m12"]*points[2][1] + params["m13"]),
                 (params["m14"]*points[0][0] + params["m15"]*points[0][1] + params["m16"]*points[1][0] + params["m17"]*points[1][1] + params["m18"]*points[2][0] + params["m19"]*points[2][1] + params["m20"])*math.sin(params["m21"]*points[0][0] + params["m22"]*points[0][1] + params["m23"]*points[1][0] + params["m24"]*points[1][1] + params["m25"]*points[2][0] + params["m26"]*points[2][1] + params["m27"]))
-    #elif func = 
+    elif func == 12:
+        return (abs(points[0][0])**(params["m0"]*points[1][0]-math.floor(params["m0"]*math.log(abs(points[0][0])))/math.log(abs(points[0][0])))-params["m1"]*points[0][1],
+                abs(points[0][1])**(params["m2"]*points[1][1]-math.floor(params["m2"]*math.log(abs(points[0][1])))/math.log(abs(points[0][1])))-params["m3"]*points[0][0])
     else:
         return points[0]
 
@@ -458,6 +453,9 @@ def f1(points):
     elif func == 11:
         return (params["m28"]*math.sin(params["m29"]*points[0][0] + params["m30"]*points[0][1] + params["m31"]*points[1][0] + params["m32"]*points[1][1] + params["m33"]*points[2][0] + params["m34"]*points[2][1] + params["m35"])+params["m36"]*math.cos(params["m37"]*points[0][0] + params["m38"]*points[0][1] + params["m39"]*points[1][0] + params["m40"]*points[1][1] + params["m41"]*points[2][0] + params["m42"]*points[2][1] + params["m43"]),
                 params["m44"]*math.sin(params["m45"]*points[0][0] + params["m46"]*points[0][1] + params["m47"]*points[1][0] + params["m48"]*points[1][1] + params["m49"]*points[2][0] + params["m50"]*points[2][1] + params["m51"])+params["m52"]*math.cos(params["m53"]*points[0][0] + params["m54"]*points[0][1] + params["m55"]*points[1][0] + params["m56"]*points[1][1] + params["m57"]*points[2][0] + params["m58"]*points[2][1] + params["m59"]))
+    elif func == 12:
+        return (abs(points[1][0])**(params["m4"]*points[0][0]-math.floor(params["m4"]*math.log(abs(points[1][0])))/math.log(abs(points[1][0])))-params["m5"]*points[1][1],
+                abs(points[1][1])**(params["m6"]*points[0][1]-math.floor(params["m6"]*math.log(abs(points[1][1])))/math.log(abs(points[1][1])))-params["m7"]*points[1][0])
     else:
         return points[1]
 
@@ -484,8 +482,8 @@ def f2(points):
         return points[2]
 
 funcList = [f0,f1,f2]
-funcNumPoints = [2,2,2,2,2,3, 3,1, 3, 3, 3, 3]
-funcNumParams = [2,2,3,2,3,4,20,3,84,96,72,84]
+funcNumPoints = [2,2,2,2,2,3, 3,1, 3, 3, 3, 3,2]
+funcNumParams = [2,2,3,2,3,4,20,3,84,96,72,84,8]
 
 def hideAll():
     global zoomOut
