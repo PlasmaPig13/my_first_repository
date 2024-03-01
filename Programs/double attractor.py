@@ -420,6 +420,7 @@ def f0(points):
     elif func == 11:
         return ((params["m0"]*points[0][0] + params["m1"]*points[0][1] + params["m2"]*points[1][0] + params["m3"]*points[1][1] + params["m4"]*points[2][0] + params["m5"]*points[2][1] + params["m6"])*math.sin(params["m7"]*points[0][0] + params["m8"]*points[0][1] + params["m9"]*points[1][0] + params["m10"]*points[1][1] + params["m11"]*points[2][0] + params["m12"]*points[2][1] + params["m13"]),
                 (params["m14"]*points[0][0] + params["m15"]*points[0][1] + params["m16"]*points[1][0] + params["m17"]*points[1][1] + params["m18"]*points[2][0] + params["m19"]*points[2][1] + params["m20"])*math.sin(params["m21"]*points[0][0] + params["m22"]*points[0][1] + params["m23"]*points[1][0] + params["m24"]*points[1][1] + params["m25"]*points[2][0] + params["m26"]*points[2][1] + params["m27"]))
+    #elif func = 
     else:
         return points[0]
 
@@ -583,7 +584,7 @@ vstretch = 1
 
 sv = scale*vstretch
 
-pointsPerFrame = 1000
+pointsPerFrame = 2000
 
 preferredNumPoints = 400000
 
